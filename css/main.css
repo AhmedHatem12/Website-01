@@ -1,6 +1,9 @@
 /* Start Variables */
 :root {
   --main-color: #10cab7;
+  --secondery-color: #2c4755;
+  --section-padding: 60px;
+  --section-color: #f6f6f6;
 }
 /* End Varaibles */
 /* Start Global Rules */
@@ -106,7 +109,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: var(--section-color);
   position: absolute;
   right: 0;
   min-width: 200px;
@@ -118,7 +121,7 @@ body {
   content: "";
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent #f6f6f6 transparent;
+  border-color: transparent transparent var(--section-color) transparent;
   position: absolute;
   right: 5px;
   top: -20px;
@@ -169,9 +172,9 @@ body {
 /* End Landing */
 /* Start Features */
 .features {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f6f6f6;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-color);
 }
 .features .container {
   display: grid;
@@ -196,8 +199,92 @@ body {
 }
 /* End Features */
 /* Start services */
-.services{
-  padding-top: 60px;
-  padding-bottom: 60px;
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.services .services-content .srv {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services-content .srv i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+.services .services-content .srv .text {
+  flex: 1;
+}
+.services .services-content .srv .text h3 {
+  margin: 0 0 20px;
+}
+.services .services-content .srv .text p {
+  color: #444;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.services .services-content .image {
+  text-align: center;
+  position: relative;
+}
+.services .services-content .image::before {
+  content: "";
+  background-color: var(--secondery-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  top: -50px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+.services .services-content .image img {
+  width: 260px;
+}
+@media (max-width: 1199px) {
+  .image-column {
+    display: none;
+  }
 }
 /* End services */
+/* Start Portfolio */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: #f6f6f6;
+}
+.portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 80px;
+}
+.portfolio .portfolio-content .card {
+  background-color: white;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portfolio .portfolio-content .card .info {
+  padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+  margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* End Portfolio */
